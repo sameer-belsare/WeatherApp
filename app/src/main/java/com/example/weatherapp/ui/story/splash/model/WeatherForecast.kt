@@ -12,9 +12,9 @@ data class Current(val last_updated_epoch: Long?, val last_updated: Long?, val t
                    val feelslike_c: Float?, val feelslike_f: Float?, val vis_km: Float?, val vis_miles: Float?,
                    val uv: Float?, val gust_mph: Float?, val gust_kph: Float?)
 
-data class Forecast(val forecastday: ArrayList<Forecastday>)
+data class Forecast(val forecastday: ArrayList<ForecastDay>)
 
-data class Forecastday(val date: String?, val date_epoch: Long?, val day: Day?, val astro: Astro?)
+data class ForecastDay(val date: String?, val date_epoch: Long?, val day: Day?, val astro: Astro?)
 
 data class Day(val maxtemp_c: Float?, val maxtemp_f: Float?, val mintemp_c: Float?, val mintemp_f: Float?,
                val avgtemp_c: Float?, val avgtemp_f: Float?, val maxwind_mph: Float?, val maxwind_kph: Float?,

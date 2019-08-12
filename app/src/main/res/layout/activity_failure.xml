@@ -15,7 +15,7 @@
         android:textAlignment="center"
         android:textColor="@color/errorTextColor"
         android:textSize="54sp"
-        android:fontFamily="@font/Roboto-Thin"
+        android:fontFamily="@font/roboto_thin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnRetry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"

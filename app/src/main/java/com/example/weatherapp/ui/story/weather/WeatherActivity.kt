@@ -1,6 +1,6 @@
 package com.example.weatherapp.ui.story.weather
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.weatherapp.R
 

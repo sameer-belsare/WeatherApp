@@ -16,7 +16,7 @@ android {
     buildTypes {
         debug {
             buildConfigField "int", "CACHE_SIZE", "5242880"
-            buildConfigField "String", "BASE_URL", "\"http://api.apixu.com/\""
+            buildConfigField "String", "BASE_URL", "\"https://api.apixu.com/v1/\""
 
         }
         release {
@@ -24,7 +24,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             buildConfigField "int", "CACHE_SIZE", "5242880"
-            buildConfigField "String", "BASE_URL", "\"http://api.apixu.com/\""
+            buildConfigField "String", "BASE_URL", "\"https://api.apixu.com/v1/\""
         }
     }
 }

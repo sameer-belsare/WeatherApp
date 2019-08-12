@@ -1,5 +1,6 @@
 package com.example.weatherapp.ui.base
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import dagger.android.AndroidInjection
@@ -12,6 +13,10 @@ abstract class BaseActivity<V : BaseViewModel<*>> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         performDependencyInjection()
         super.onCreate(savedInstanceState)
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(newBase)
     }
 
     fun performDependencyInjection() {

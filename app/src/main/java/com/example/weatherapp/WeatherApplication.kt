@@ -9,4 +9,7 @@ class WeatherApplication: DaggerApplication() {
         return DaggerAppComponent.builder().application(this).build()
     }
 
+    override fun onCreate() {
+        super.onCreate()
+    }
 }

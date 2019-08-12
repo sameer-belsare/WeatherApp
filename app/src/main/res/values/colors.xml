@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="screenBgColor">#F5F6F7</color>
+    <color name="errorScreenBgColor">#E85959</color>
+    <color name="errorTextColor">#FFFFFF</color>
+    <color name="buttonBgColor">#4A4A4A</color>
+    <color name="tempBig">#2A2A2A</color>
+    <color name="cityColor">#556799</color>
 </resources>

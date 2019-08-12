@@ -14,9 +14,17 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField "int", "CACHE_SIZE", "5242880"
+            buildConfigField "String", "BASE_URL", "\"http://api.apixu.com/\""
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "int", "CACHE_SIZE", "5242880"
+            buildConfigField "String", "BASE_URL", "\"http://api.apixu.com/\""
         }
     }
 }

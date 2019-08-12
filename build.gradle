@@ -37,6 +37,10 @@ ext {
     junitVersion = '4.12'
     espressoVersion = '3.1.0'
     testRunnerVersion = '1.1.0'
+
+    dagger2Version = '2.18'
+    rxandroidVersion = '2.0.2'
+    retrofitVersion = '2.5.0'
 }
 
 task clean(type: Delete) {

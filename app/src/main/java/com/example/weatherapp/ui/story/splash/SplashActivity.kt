@@ -26,7 +26,7 @@ class SplashActivity : BaseActivity<SplashViewModel>(), SplashNavigator {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
-        viewModel!!.navigator = this
+        viewModel.navigator = this
         setupViews()
         viewModel.weatherForecast()
     }

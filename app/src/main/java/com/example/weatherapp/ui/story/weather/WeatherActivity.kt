@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_weather.*
 import javax.inject.Inject
 
 
-
 class WeatherActivity : BaseActivity<WeatherViewModel>(), WeatherNavigator {
 
     @Inject
@@ -28,8 +27,11 @@ class WeatherActivity : BaseActivity<WeatherViewModel>(), WeatherNavigator {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
-        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        viewModel!!.navigator = this
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
+        viewModel.navigator = this
         setupViews()
     }
 
@@ -46,7 +48,8 @@ class WeatherActivity : BaseActivity<WeatherViewModel>(), WeatherNavigator {
 
         Handler().postDelayed(Runnable {
             val selectedViewY = bottomLayout.y
-            val animator = ObjectAnimator.ofFloat(weatherRecyclerView, "translationY", selectedViewY, 0f)
+            val animator =
+                ObjectAnimator.ofFloat(weatherRecyclerView, "translationY", selectedViewY, 0f)
             animator.duration = ANIMATION_DURATION
             val set = AnimatorSet()
             set.play(animator)

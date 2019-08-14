@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [AndroidInjectionModule::class, ActivityModule::class, DataModule::class])
-interface AppComponent: AndroidInjector<WeatherApplication> {
+interface AppComponent : AndroidInjector<WeatherApplication> {
 
     @Component.Builder
     interface Builder {

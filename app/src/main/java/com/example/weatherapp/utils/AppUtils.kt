@@ -8,7 +8,7 @@ object AppUtils {
 
         val simpleDateFormat = SimpleDateFormat("EEEE", Locale.ENGLISH)
         simpleDateFormat.timeZone = TimeZone.getDefault()
-        val date = Date(epoch!!*1000L)
+        val date = Date(epoch!! * 1000L)
         return simpleDateFormat.format(date)
 
         /*val calendar = Calendar.getInstance()

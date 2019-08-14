@@ -69,12 +69,15 @@ class DataModule {
     fun providesRemoteApiHelper(
         retrofit: Retrofit
     ): RemoteApiHelper {
-        return retrofit.create(RemoteApiHelper::class.java!!)
+        return retrofit.create(RemoteApiHelper::class.java)
     }
 
     @Provides
     @Singleton
-    internal fun provideRemoteApiService(retrofit: Retrofit, remoteApiHelper: RemoteApiHelper): RemoteApiService {
+    internal fun provideRemoteApiService(
+        retrofit: Retrofit,
+        remoteApiHelper: RemoteApiHelper
+    ): RemoteApiService {
         return RemoteApiService(retrofit, remoteApiHelper)
     }
 }

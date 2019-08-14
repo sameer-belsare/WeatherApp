@@ -15,10 +15,6 @@ abstract class BaseActivity<V : BaseViewModel<*>> : AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(newBase)
-    }
-
     fun performDependencyInjection() {
         AndroidInjection.inject(this)
     }

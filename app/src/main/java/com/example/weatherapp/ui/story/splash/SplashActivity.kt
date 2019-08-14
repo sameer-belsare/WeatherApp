@@ -9,6 +9,7 @@ import com.example.weatherapp.R
 import com.example.weatherapp.ui.base.BaseActivity
 import com.example.weatherapp.ui.story.Failure.FailureActivity
 import com.example.weatherapp.ui.story.splash.model.SplashViewModel
+import com.example.weatherapp.ui.story.splash.model.WeatherForecast
 import com.example.weatherapp.ui.story.weather.WeatherActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 import javax.inject.Inject
@@ -40,9 +41,11 @@ class SplashActivity : BaseActivity<SplashViewModel>(), SplashNavigator {
         imageViewObjectAnimator.start()
     }
 
-    override fun success() {
+    override fun success(weatherForecast: WeatherForecast) {
         finish()
-        startActivity(Intent(this, WeatherActivity::class.java))
+        val intent = Intent(this, WeatherActivity::class.java)
+        intent.putExtra("weatherjson", weatherForecast)
+        startActivity(intent)
     }
 
     override fun failure() {

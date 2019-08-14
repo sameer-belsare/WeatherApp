@@ -1,26 +1,37 @@
 package com.example.weatherapp.ui.story.splash.model
 
-data class WeatherForecast(val location: Location?, val current: Current?, val forecast: Forecast?)
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-data class Location(val name: String?, val region: String?, val country: String?, val lat: Long?, val lon: Long?,
-                    val tz_id: String, val localtime_epoch: Long?, val localtime: Long?)
+@Parcelize
+data class WeatherForecast(var location: Location?, var current: Current?, var forecast: Forecast?) : Parcelable
 
-data class Current(val last_updated_epoch: Long?, val last_updated: Long?, val temp_c: Float?, val temp_f: Float?,
-                   val is_day: Int?, val condition: Condition?, val wind_mph: Float?, val wind_kph: Float?,
-                   val wind_degree: Int?, val wind_dir: String?, val pressure_mb: Float?, val pressure_in: Float?,
-                   val precip_mm: Float?, val precip_in: Float?, val humidity: Int?, val cloud: Int?,
-                   val feelslike_c: Float?, val feelslike_f: Float?, val vis_km: Float?, val vis_miles: Float?,
-                   val uv: Float?, val gust_mph: Float?, val gust_kph: Float?)
+@Parcelize
+data class Location(var name: String?, var region: String?, var country: String?, var lat: Float?, var lon: Float?,
+                    var tz_id: String, var localtime_epoch: Long?, var localtime: String?) : Parcelable
 
-data class Forecast(val forecastday: ArrayList<ForecastDay>)
+@Parcelize
+data class Current(var last_updated_epoch: Long?, var last_updated: String?, var temp_c: Float?, var temp_f: Float?,
+                   var is_day: Int?, var condition: Condition?, var wind_mph: Float?, var wind_kph: Float?,
+                   var wind_degree: Int?, var wind_dir: String?, var pressure_mb: Float?, var pressure_in: Float?,
+                   var precip_mm: Float?, var precip_in: Float?, var humidity: Int?, var cloud: Int?,
+                   var feelslike_c: Float?, var feelslike_f: Float?, var vis_km: Float?, var vis_miles: Float?,
+                   var uv: Float?, var gust_mph: Float?, var gust_kph: Float?) : Parcelable
 
-data class ForecastDay(val date: String?, val date_epoch: Long?, val day: Day?, val astro: Astro?)
+@Parcelize
+data class Forecast(var forecastday: ArrayList<ForecastDay>) : Parcelable
 
-data class Day(val maxtemp_c: Float?, val maxtemp_f: Float?, val mintemp_c: Float?, val mintemp_f: Float?,
-               val avgtemp_c: Float?, val avgtemp_f: Float?, val maxwind_mph: Float?, val maxwind_kph: Float?,
-               val totalprecip_mm: Float?, val totalprecip_in: Float?, val avgvis_km: Float?, val avgvis_miles: Float?,
-               val avghumidity: Float?, val condition: Condition?, val uv: Float?)
+@Parcelize
+data class ForecastDay(var date: String?, var date_epoch: Long?, var day: Day?, var astro: Astro?) : Parcelable
 
-data class Astro(val sunrise: String?, val sunset: String?, val moonrise: String?, val moonset: String?)
+@Parcelize
+data class Day(var maxtemp_c: Float?, var maxtemp_f: Float?, var mintemp_c: Float?, var mintemp_f: Float?,
+               var avgtemp_c: Float?, var avgtemp_f: Float?, var maxwind_mph: Float?, var maxwind_kph: Float?,
+               var totalprecip_mm: Float?, var totalprecip_in: Float?, var avgvis_km: Float?, var avgvis_miles: Float?,
+               var avghumidity: Float?, var condition: Condition?, var uv: Float?) : Parcelable
 
-data class Condition(val text: String?, val icon: String?, val code: Int?)
+@Parcelize
+data class Astro(var sunrise: String?, var sunset: String?, var moonrise: String?, var moonset: String?) : Parcelable
+
+@Parcelize
+data class Condition(var text: String?, var icon: String?, var code: Int?) : Parcelable

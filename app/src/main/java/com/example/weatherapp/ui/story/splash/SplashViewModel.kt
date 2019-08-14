@@ -18,7 +18,7 @@ class SplashViewModel
             .observeOn(schedulerProvider.ui())
             .subscribe(
                 { weatherForecast ->
-                    navigator?.success()
+                    navigator?.success(weatherForecast)
                 },
                 { throwable ->
                     navigator?.failure()

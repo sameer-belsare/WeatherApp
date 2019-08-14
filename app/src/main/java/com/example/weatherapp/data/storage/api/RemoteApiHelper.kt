@@ -6,6 +6,6 @@ import retrofit2.http.*
 
 interface RemoteApiHelper {
 
-    @GET("/forecast.json")
+    @GET("/v1/forecast.json/")
     fun forecastWeather(@Query("key") key: String, @Query("q") city: String, @Query("days") days: Int): Observable<WeatherForecast>
 }

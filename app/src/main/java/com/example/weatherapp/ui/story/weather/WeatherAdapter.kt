@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.ui.base.BaseViewHolder
 import com.example.weatherapp.ui.story.splash.model.ForecastDay
+import com.example.weatherapp.utils.AppUtils
 import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.weather_item_view.*
 
 class WeatherAdapter
     (private val mContext: Context) : RecyclerView.Adapter<BaseViewHolder>() {
@@ -28,7 +30,7 @@ class WeatherAdapter
 
     override fun getItemCount() = mForecastDayList!!.size
 
-    fun addFeeds(forecastDayList: ArrayList<ForecastDay>?) {
+    fun addForecast(forecastDayList: ArrayList<ForecastDay>?) {
         mForecastDayList = forecastDayList
     }
 
@@ -37,8 +39,9 @@ class WeatherAdapter
 
         override fun onBind(position: Int) {
 
-            val forecastDay = mForecastDayList!!.get(position)
-
+            val forecastDay = mForecastDayList!![position]
+            tvDay.text = AppUtils.getDayFromEpoch(forecastDay.date_epoch)
+            tvTemp.text = forecastDay.day?.avgtemp_c.toString() + 0x00B0.toChar() + "C"
         }
     }
 }
